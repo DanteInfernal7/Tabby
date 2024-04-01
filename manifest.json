@@ -1,0 +1,25 @@
+{
+    "name": "Tab Grouper",
+    "version": "1.0",
+    "description": "Easy grouping of Chrome Tabs",
+    "permissions": ["tabs", "activeTab", "scripting", "tabGroups", "webNavigation", "storage"],
+    "host_permissions": ["<all_urls>"],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["contentScript.js"]
+        }
+    ],
+    "action": {
+        "default_icon": {
+            "16":"assets/icon-192.png",
+            "24":"assets/icon-512.png" 
+        },
+        "default_title": "Tab Grouper",
+        "default_popup": "popup.html"
+    },
+    "manifest_version": 3
+}
