@@ -1,13 +1,17 @@
+:root {
+  --form-control-color: #3e3edb;
+  --form-control-disabled: #959495;
+}
 
 .button-34 {
-  background: #5E5DF0;
+  background: #3e3edb;
   border-radius: 8px;
-  box-shadow: #5E5DF0 0 10px 20px -10px;
+  box-shadow: #3e3edb 0 10px 20px -10px;
   box-sizing: border-box;
   color: #FFFFFF;
   cursor: pointer;
   font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 700;
   line-height: 24px;
   opacity: 1;
@@ -17,23 +21,148 @@
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  width: fit-content;
+  width: 20%;
   word-break: keep-all;
   border: 0;
 }
 
-h1 {
-    font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
-    border: 0;
-    word-break: keep-all;
-    width: fit-content;
-    opacity: 1;
-    font-size: 25px;
-    font-weight: 700;
-    line-height: 24px;
-    outline: 0 solid transparent;
-    padding: 8px 18px;
-    margin: 5px;
-    border-radius: 8px;
-    color: #363636;
+h2 {
+  font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+  border: 0;
+  word-break: keep-all;
+  opacity: 1;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  outline: 0 solid transparent;
+  padding: 8px 18px;
+  margin: 5px;
+  border-radius: 8px;
+  color: #363636;
+  text-align: center;
+}
+
+/* Container for the divs */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: auto;
+  margin-bottom: 2px;
+}
+
+.container1 {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: auto;
+}
+
+/* Individual divs */
+.section {
+  width: 100%;
+  height: auto;
+  display: none; /* Hide all divs initially */
+}
+
+/* Show the active div */
+.section.active {
+  display: block;
+}
+
+/* Buttons */
+.button-switcher {
+  padding: 10px 20px;
+  box-shadow: #3e3edb 0 10px 20px -10px;
+  box-sizing: border-box;
+  background-color: #3e3edb;
+  font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+  color: #ffffffd0;
+  font-size: 14px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  margin: 1px;
+}
+
+.button-switcher:focus {
+  background-color: #2bb1ff;
+}
+
+form {
+  display: grid;
+  place-content: left;
+}
+
+.form-control {
+  font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.1;
+  display: grid;
+  grid-template-columns: 1em auto;
+  gap: 0.5em;
+}
+
+.form-control + .form-control {
+  margin-top: 2px;
+}
+
+.form-control--disabled {
+  color: var(--form-control-disabled);
+  cursor: not-allowed;
+}
+
+input[type="checkbox"] {
+  /* Add if not using autoprefixer */
+  -webkit-appearance: none;
+  /* Remove most all native input styles */
+  appearance: none;
+  /* For iOS < 15 */
+  background-color: var(--form-background);
+  /* Not removed via appearance */
+  margin: 0;
+
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid currentColor;
+  border-radius: 0.15em;
+  transform: translateY(-0.075em);
+
+  display: grid;
+  place-content: center;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  transform: scale(0);
+  transform-origin: bottom left;
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--form-control-color);
+  /* Windows High Contrast Mode */
+  background-color: CanvasText;
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+input[type="checkbox"]:focus {
+  outline: max(2px, 0.15em) solid currentColor;
+  outline-offset: max(2px, 0.15em);
+}
+
+input[type="checkbox"]:disabled {
+  --form-control-color: var(--form-control-disabled);
+
+  color: var(--form-control-disabled);
+  cursor: not-allowed;
 }

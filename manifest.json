@@ -2,7 +2,7 @@
     "name": "Tab Grouper",
     "version": "1.0",
     "description": "Easy grouping of Chrome Tabs",
-    "permissions": ["tabs", "activeTab", "scripting", "tabGroups", "webNavigation", "storage"],
+    "permissions": ["tabs", "activeTab", "scripting", "tabGroups", "webNavigation", "storage", "notifications"],
     "host_permissions": ["<all_urls>"],
     "background": {
         "service_worker": "background.js"

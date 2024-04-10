@@ -1,17 +1,46 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sort Tabs</title>
     <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <h1>Tabby</h1><hr>
-        <div class="content">
-          <button class="button-34" id="urlSort">Group By Website</button>
-          <button class="button-34" id="contextSort">Group By Context</button>
-          <button class="button-34" id="destroyGroups">Reset Tabs</button>
-  </body>
-  <script src="popup.js"></script>
-</html>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="button-switcher" data-section="1" id = "tab1">Grouping Options</button>
+        <button class="button-switcher" data-section="2" id = "tab1">Saved Groups</button>
+        <button class="button-switcher" data-section="3" id = "tab1">Wildcard Grouping</button>
+        <button class="button-switcher" data-section="4" id = "tab1">App Settings</button>
+    </div>
+    <div class="section active" id="section1">
+      <h2>Grouping Options</h2>
+      <div class="container1">
+        <button class="button-34" id="urlSort">Website</button>
+        <button class="button-34" id="contextSort">Context</button>
+        <button class="button-34" id="destroyGroups">Reset</button>
+      </div>
+    </div>
 
+    <div class="section" id="section2">
+        <h2>Saved Groups</h2>
+    </div>
+
+    <div class="section" id="section3">
+        <h2>Wildcard Grouping</h2>
+    </div>
+
+    <div class="section" id="section4">
+        <h2>Settings</h2>
+        <form action="">
+          <label class="form-control"> <!-- form-control--disabled -->
+            <input id="autoRearr" class="checkbox" type="checkbox" name="autoRearr" />
+            Auto Rearrangement
+          </label>
+        </form>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>
